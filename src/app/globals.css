@@ -1,26 +1,83 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --canvas: #eceeed;
+  --card: #ffffff;
+  --soft: #f4f5f4;
+  --soft-hover: #eaecea;
+  --fg: #1a1c1b;
+  --muted: #747a77;
+  --line: #e4e7e5;
+  --inverse: #1c1e1d;
+  --inverse-fg: #ffffff;
+  --brand: #1f7a4d;
+  --brand-soft: #d9f2e4;
+  --good: #1a7f4e;
+  --good-soft: #def5e8;
+  --bad: #c42b3c;
+  --bad-soft: #fde7e9;
+  --tag: #1d4fb8;
+  --tag-soft: #dbe6ff;
+  --series-male: #2a78d6;
+  --series-female: #d0409a;
+  color-scheme: light;
+}
+
+.dark {
+  --canvas: #0e100f;
+  --card: #181b1a;
+  --soft: #212524;
+  --soft-hover: #2a2f2d;
+  --fg: #f1f3f2;
+  --muted: #9aa19d;
+  --line: #2b302e;
+  --inverse: #f1f3f2;
+  --inverse-fg: #151716;
+  --brand: #3fae76;
+  --brand-soft: #173526;
+  --good: #5fd39a;
+  --good-soft: #15301f;
+  --bad: #ff8590;
+  --bad-soft: #3a181c;
+  --tag: #a9c2ff;
+  --tag-soft: #1c2c52;
+  --series-male: #4a94ea;
+  --series-female: #d6529f;
+  color-scheme: dark;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-canvas: var(--canvas);
+  --color-card: var(--card);
+  --color-soft: var(--soft);
+  --color-soft-hover: var(--soft-hover);
+  --color-fg: var(--fg);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-inverse: var(--inverse);
+  --color-inverse-fg: var(--inverse-fg);
+  --color-brand: var(--brand);
+  --color-brand-soft: var(--brand-soft);
+  --color-good: var(--good);
+  --color-good-soft: var(--good-soft);
+  --color-bad: var(--bad);
+  --color-bad-soft: var(--bad-soft);
+  --color-tag: var(--tag);
+  --color-tag-soft: var(--tag-soft);
+  --color-series-male: var(--series-male);
+  --color-series-female: var(--series-female);
+  --font-sans: var(--font-outfit), ui-sans-serif, system-ui, sans-serif;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--canvas);
+  color: var(--fg);
+}
+
+/* Thin, unobtrusive scrollbars inside panels */
+.scroll-thin {
+  scrollbar-width: thin;
+  scrollbar-color: var(--line) transparent;
 }
